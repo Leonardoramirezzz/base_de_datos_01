@@ -1,8 +1,10 @@
----------------------------   GameSpot  ---------------------------
+----------------- GameSpot  -----------------
 
-Usuario: leonardo_gamer - Contraseña: 12345 - Edad: 17 - Región: Moquegua
-Usuario: gamer64 - Contraseña: 1245 - Edad: 20 - Región: Arequipa
-Usuario: panchito - Contraseña: secreto - Edad: 24 - Región: Lima
-Usuario: leox - Contraseña: 12345 - Edad: 18 - Región: Moquegua
-Usuario: leonardo - Contraseña: secreto - Edad: 17 - Región: Moquegua
-Usuario: usux - Contraseña: 145 - Edad: 70 - Región: Ayacucho
+Datos Clientes
+
+Usuario: leo - asd - 1 - moq
+Usuario: a - b - 2 - m
+Usuario: jair - sec - 123456 - aqp
+Usuario: rodrigo - hola - 40 - lima
+Usuario: qwert - 1234 - 18 - arequipa
+Usuario: juan - 158 - 19 - arequipa

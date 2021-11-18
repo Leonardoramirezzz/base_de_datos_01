@@ -1,0 +1,20 @@
+---------------------  GameSpot  ---------------------
+
+Nombre_producto:  Tipo_producto: Codigo:  Cantidad:  Precio_unitario
+Fifa_21, Videojuego, 47483, 4, 300
+Grand Theft Auto, Videojuego, 3984, 10, 420
+Super Smash bros, Videojuego, 20129, 8, 150
+Pokemon Shining, Videojuego, 23189, 5, 180
+Xbox Series S, Consola, 30157, 9, 200
+Nintendo Switch, Consola, 50679, 5, 1000
+Nintendo Switch lite, Consola, 30469 7, 750
+Sony DualShock, Accesorios, 80459, 6, 230
+Microsoft Xbox Series X, Accesorios, 90339, 4, 550
+Playstation 5, Consola, 40259, 3, 4000
+Logitech Driving Force, Accesorios, 50359, 6, 2100
+Heavy Equipment Bundle, Accesorios, 48329, 7, 2300
+Heavy Equipment Side Panel, Accesorios, 47523, 8, 2400
+Mouse Inalámbrico, Accesorios, 23648, 10, 150
+Mouse Óptico para juegos, Accesorios, 74569, 7, 250
+C920 HD Pro Webcam, Accesorios, 36149, 6, 2400
+Driving Force Shifter, Accesorios, 25776, 5, 2100
