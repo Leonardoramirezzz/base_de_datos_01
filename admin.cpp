@@ -1,11 +1,11 @@
-#include "usuario_general.h"
+#include "admin.h"
 #include <iostream>
 #include <fstream>
 
 
 ifstream Lec3;
 
-Administrador::Administrador (string _usuario, string _contraseña, int _edad, string _region, int _id) : Empleado(_usuario, _contraseña, _edad, _region, _id) {}
+Administrador::Administrador (string _usuario, string _contraseña, string _edad, string _region, int _id) : Empleado(_usuario, _contraseña, _edad, _region, _id) {}
 
 void Administrador::ver_compras(){
 
