@@ -1,10 +1,9 @@
------------------ GameSpot  -----------------
-
-Datos Clientes
-
-Usuario: leo - asd - 1 - moq
-Usuario: a - b - 2 - m
-Usuario: jair - sec - 123456 - aqp
-Usuario: rodrigo - hola - 40 - lima
-Usuario: qwert - 1234 - 18 - arequipa
-Usuario: juan - 158 - 19 - arequipa
+8
+leo asd 1 moq,
+a b 2 m,
+jair sec 12345 aqp,
+rodrigo hola 40 lima,
+qwert 12341 8 arequipa,
+juan 158 19 arequipa,
+Diego 12345 18 peru,
+qwedsa 41587 56 arequipa,
