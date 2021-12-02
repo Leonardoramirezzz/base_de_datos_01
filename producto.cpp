@@ -2,7 +2,7 @@
 
 Producto::Producto(){}
 
-Producto::Producto (string _nombre, string _tipo, string _codigo, int _cantidad, double _precio){
+Producto::Producto (string _nombre, string _tipo, string _codigo, string _cantidad, string _precio){
   nombre = _nombre;
   tipo = _tipo;
   codigo = _codigo;
@@ -33,17 +33,17 @@ string Producto::get_codigo(){
   return codigo;
 }
 
-void Producto::set_cantidad(int _cantidad){
+void Producto::set_cantidad(string _cantidad){
   cantidad = _cantidad;
 }
-int Producto::get_cantidad(){
+string Producto::get_cantidad(){
   return cantidad;
 }
 
-void Producto::set_precio(double _precio){
+void Producto::set_precio(string _precio){
   precio = _precio;
 }
-double Producto::get_precio(){
+string Producto::get_precio(){
   return precio;
 }
 
