@@ -1,23 +1,19 @@
 #pragma once
+#include <string>
+#include <string.h>
 #include <fstream>
-#include <vector>
 #include "Usuarios.h"
 #include "cliente.h"
 #include "empleado.h"
 #include "admin.h"
+#include "producto.h"
 #include "Tienda.h"
-
-
+#include "array_objetos.h"
 using namespace std;
 
-void menu_cliente();
-void menu_empleado();
+void menu_cliente(Cliente persona);
+void menu_empleado(Empleado semiadmin);
 void menu_admin();
 
 void menu_principal (bool &run);
-int menu_iniciar_sesion();
-void iniciar_sesion();
-int num_registros_iniciales();
-Cliente* array_registros_iniciales();
-Producto* array_productos_totales();
-void registrar_cliente();
+string ingresar_region();
