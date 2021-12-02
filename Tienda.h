@@ -1,7 +1,7 @@
 #pragma once
 #include <fstream>
-#include <vector> 
 #include "producto.h"
+#include "array_objetos.h"
 
 using namespace std;
 
@@ -10,24 +10,21 @@ class Tienda {
     int id;
     string direccion;
     string nombre_catalogo;
-    vector< Producto > inventario;
-    
+    string region;
+    Producto* inventario;
   public:
+    Tienda();
     Tienda(int _id, string _direccion, string _nombre_catalogo);
     ~Tienda();
     void set_id(int _id);
     int get_id();
     void set_direccion(string _direccion);
     string get_direccion();
-   // void set_nombre_catalogo(string _nombre_catalogo);
+    void set_nombre_catalogo(string _nombre_catalogo);
     string get_nombre_catalogo();
     void imprimirTienda();
-    //void ver_inventario();
     bool recibir_queja(std::string _queja);
     void ver_quejas();
-    //void mostrar_catalogo();
-    
-  private:
-    //bool llenar_inventario();
-
+    void mostrar_catalogo(int numero_productos);
+    Producto* get_inventario();
 };
