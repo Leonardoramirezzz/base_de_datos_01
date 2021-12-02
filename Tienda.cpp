@@ -4,15 +4,23 @@
 
 ifstream Lec_tienda;
 
+Tienda::Tienda(){
+  Array_objetos Inventory;
+  inventario = Inventory.array_productos_totales("Centro");
+}
+
 Tienda::Tienda(int _id, string _direccion, string _nombre_catalogo){
+  Array_objetos Inventory;
   id = _id;
   direccion = _direccion;
   nombre_catalogo = _nombre_catalogo;
- // llenar_inventario();
+  inventario = Inventory.array_productos_totales(_nombre_catalogo);
 }
+
 Tienda::~Tienda(){
-  
+  delete[] inventario;
 }
+
 void Tienda::set_id(int _id){
   id = _id;
 }
@@ -29,42 +37,34 @@ string Tienda::get_direccion(){
   return direccion;
 }
 
-/*void Tienda::set_nombre_catalogo(string _nombre_catalogo){
+void Tienda::set_nombre_catalogo(string _nombre_catalogo){
   nombre_catalogo = _nombre_catalogo;
-  llenar_inventario();
 }
-*/
+
 string Tienda::get_nombre_catalogo(){
   return nombre_catalogo;
 }
 
-void Tienda::imprimirTienda(){
-  cout<<"El id de la tienda es: "<<id<<endl;
-  cout<<"La direccion de la tienda es: "<<direccion<<endl;
-  cout<<"El catalogo de la tienda es: "<<nombre_catalogo<<endl;
+Producto* Tienda::get_inventario(){
+  return inventario;
 }
 
-/*void Tienda::ver_inventario(){
-  if(!inventario.empty()){
-    for (int i=0;i<inventario.size();i++){
-      inventario[i].ver_producto();
-      cout<<endl;
-    }
-  } 
-  else{
-    cout<<"El inventario esta vacio"<<endl;
-  }
+
+void Tienda::imprimirTienda(){
+  cout<<"El id de la tienda es: " << id << endl;
+  cout<<"La direccion de la tienda es: " << direccion<<endl;
+  cout<<"El catalogo de la tienda es: " << nombre_catalogo<<endl;
 }
-*/
+
 bool Tienda::recibir_queja(string _queja){
   string nombre_archivo_quejas;
   nombre_archivo_quejas = "archivo_quejas_" + to_string(id) + ".txt";
-  ofstream archivo(nombre_archivo_quejas, ios::app);
+  ofstream archivo(nombre_archivo_quejas.c_str(), ios::app);
   if (!archivo.is_open()){ //verificas que el archivo haya podido abrirse
     cout<<"El archivo no ha podido abrirse"<<endl;
     return false;
   }
-  archivo<<_queja<<endl<<endl;
+  archivo << _queja << endl << endl;
   archivo.flush();
   archivo.close();
   return true;
@@ -73,13 +73,13 @@ bool Tienda::recibir_queja(string _queja){
 void Tienda::ver_quejas(){
   string nombre_archivo_quejas;
   nombre_archivo_quejas = "archivo_quejas_" + to_string(id) + ".txt";
-  ifstream archivo(nombre_archivo_quejas, ios::in);
+  ifstream archivo(nombre_archivo_quejas.c_str(), ios::in);
   if (!archivo.is_open()){ //verificas que el archivo haya podido abrirse
     cout<<"El archivo no ha podido abrirse"<<endl;
     return;
   }
   string linea_archivo;
-  cout<<"Quejas de la tienda: "<<id<<endl;
+  cout<<"Quejas de la tienda: " << id << endl;
   /* formato de queja 
       nombre_cliente
       id_cliente 
@@ -95,69 +95,21 @@ void Tienda::ver_quejas(){
     getline(archivo, linea_archivo);
   }
   archivo.close();
-
 }
 
-/*void Tienda::mostrar_catalogo(){
-  cout<<"\t\t\tCatalogo tienda "<<id<<endl<<endl;
+void Tienda::mostrar_catalogo(int numero_productos){
+  cout<<"\t\t\tCatalogo tienda " << id << endl << endl;
   cout<<"Producto\t\t\tPrecio\t\t\tEstado"<<endl;
   cout<<"----------------------------------------------"<<endl;
-  for(int i=0;i<inventario.size();i++){
+  for(int i=0; i < numero_productos ; i++){
     cout<<inventario[i].get_nombre()<<"\t\t\t";
     cout<<inventario[i].get_precio()<<"\t\t\t";
-    if (inventario[i].get_cantidad()>0){
-      cout<<"disponible";
+    if (stoi(inventario[i].get_cantidad())>0){
+      cout << "Disponible";
     }
     else{
-      cout<<"agotado";
+      cout << "Agotado";
     } 
     cout<<endl;
   }
-} */
-
-
-
-
-/*bool Tienda::llenar_inventario(){
-
-  ifstream archivo;
-  archivo.open(nombre_catalogo, ios::in);
-  
-
-  if (!archivo.is_open()){ //verificas que el archivo haya podido abrirse
-    cout<<"El archivo no ha podido abrirse"<<endl;
-    return false;
-  }
-
-  string encabezado;
-  string nombre, tipo, codigo;
-  int cantidad;
-  double precio;
-
-  getline(archivo,encabezado);
-  
-  while (!archivo.eof()){ 
-    archivo>>nombre;
-    nombre.pop_back();
-
-    archivo>>tipo;
-    tipo.pop_back();
-
-    archivo>>codigo;
-    codigo.pop_back();
-
-    string cantidadStr;
-    archivo>>cantidadStr;
-    cantidadStr.pop_back();
-    cantidad = stoi(cantidadStr);
-
-    archivo>>precio;
-    
-    Producto producto(nombre,tipo,codigo,cantidad,precio);
-    inventario.push_back(producto);
-  }
-  archivo.close();
-  
-  return true;
 }
-*/
