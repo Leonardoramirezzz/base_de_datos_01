@@ -1,20 +1,29 @@
-leo asd 1 Centro
-a b 2 Selva
-jair sec 12345 Sur
-rodrigo hola 40 Norte
-qwert 12341 8 Selva
-juan 158 19 Centro
-Diego 12345 18 Norte
-qwedsa 41587 56 Sur
-ds 15423 26 Sur
-pepe hola 25 Selva
-jeje 4512 24 Lima
-jaja 2345 58 Norte
-uji qwe 8 Sur
-fallo me 48 Selva
-juan df 16 Lima
-manuel drxctghfdcygh 50 Norte
-kilo olik 56 Sur
-me quiero 123 Sur
-New lol 45 Sur
-tourist 12345 20 Centro
+leo asd 1 Centro 0
+a b 2 Selva 2
+jair sec 12345 Sur 0
+rodrigo hola 40 Norte 5
+qwert 12341 8 Selva 3
+juan 158 19 Centro 2
+Diego 12345 18 Norte 0
+qwedsa 41587 56 Sur 1
+ds 15423 26 Sur 0
+pepe hola 25 Selva 12
+jeje 4512 24 Lima 0
+jaja 2345 58 Norte 0
+uji qwe 8 Sur 0
+fallo me 48 Selva 3
+juan df 16 Lima 0
+manuel drxctghfdcygh 50 Norte 0
+kilo olik 56 Sur 0
+me quiero 123 Sur 0
+New lol 45 Sur 0
+tourist 12345 20 Centro 0
+leonardo 12345 50 Norte 0
+juan helado 19 Sur 0
+poli 46 36 Centro 0
+kilo loki 79 Lima 0
+prueba p 16 Lima 0
+jilo loji 46 Centro 0
+hyde uasd 46 Centro 0
+unnzx ikefef 13 Sur 0
+kmnvv oplkh 56 Norte 0
