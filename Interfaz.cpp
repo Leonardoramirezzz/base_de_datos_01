@@ -7,13 +7,12 @@
 ofstream Guardar("Datos_Usuarios.txt", ios::app);
 ifstream Lec_interfaz;
 
-void menu_cliente (Cliente persona)
+void menu_cliente (Cliente persona, int i)
 {
   
   Array_objetos lista_compra;
   Producto* lista = lista_compra.array_productos_totales(persona.get_region());
-
-
+  Cliente* listaC = lista_compra.array_registros_iniciales();
   int opcion_1;
   cout << "\n\n---------------------  GAMESPOT  ---------------------" << endl;
   cout << "¡Bienvienido a la tienda de la región: " << persona.get_region() << "!"<< endl;
@@ -32,7 +31,7 @@ void menu_cliente (Cliente persona)
     }
     case 1:{  
       persona.ver_catalogo(); 
-      menu_cliente(persona);
+      menu_cliente(persona,i);
       break;
     }
     case 2:{  // Comprar
@@ -41,25 +40,27 @@ void menu_cliente (Cliente persona)
       persona.ver_catalogo();
       cout << "\nSeleccione el producto que desea comprar: " << endl;
       cin >> compras;
-      persona.comprar(compras, lista);
-
+      persona.comprar(lista_compra.num_registros_iniciales(), listaC, compras, lista,i);
       lista_compra.actualizar_cantidad_productos(persona.get_region(),lista,lista_compra.num_productos_iniciales(persona.get_region()));
-      menu_cliente(persona);
+      
+      
+
+      menu_cliente(persona,i);
       break;
     }
     case 3:{
       persona.quejas_reclamos();
-      menu_cliente(persona);
+      menu_cliente(persona,i);
       break;
     }
     case 4:{ 
       persona.ayuda_cliente();  
-      menu_cliente(persona);
+      menu_cliente(persona,i);
       break;
     }
     case 5:{
       persona.ver_perfil();
-      menu_cliente(persona);
+      menu_cliente(persona,i);
     }
   }
   cout <<endl;
@@ -93,10 +94,10 @@ void menu_empleado(Empleado semiadmin){
 }
 
 void menu_admin(){
-  Administrador admin("Gamespot2021","powertotheplayers","70","Lima",007); 
+  Administrador admin("Gamespot2021","powertotheplayers","70","Lima",007,5); 
   int opcion_admin;
   cout << "\n\n---------------------  GAMESPOT  ---------------------" << endl;
-  cout << "1. Ver compras" << endl;
+  cout << "1. Ver número de empleados" << endl;
   cout << "2. Ver datos de los usuarios" << endl;
   cout << "0. Salir de la Sesión" << endl;
   cout << "Ingrese su opción: ";
@@ -104,7 +105,7 @@ void menu_admin(){
 
   switch (opcion_admin){
     case 1:{
-      admin.ver_compras(); // Falta implementar
+      admin.Ver_cantidad_de_empleados(); 
       menu_admin();
       break;
     }
@@ -139,7 +140,7 @@ void menu_principal (bool &run) {
      }
     case 1:
     {
-      Cliente login("0","0","0","0");
+      Cliente login("0","0","0","0","0");
       cout << "Ingrese nombre de usuario: "; cin >> usuario;
       cout << "Ingrese la contraseña: "; cin >> contraseña;
       Array_objetos lista_login;
@@ -158,7 +159,7 @@ void menu_principal (bool &run) {
       region = ingresar_region();
 
       
-      Guardar << usuario << " " << contraseña << " " << edad << " " << region << endl;
+      Guardar << usuario << " " << contraseña << " " << edad << " " << region <<       " 0"<< endl;
 
       Array_objetos numero_actualizado;
       numero_actualizado.num_registros_mas_uno();
