@@ -57,6 +57,7 @@ void Cliente::comprar(int num_clientes,Cliente *Lista_clientes, int nume_product
     actualizar(num_clientes, Lista_clientes);
     cout << "Producto escogido: " << Lista_Productos[indice].get_nombre();
     cout << "\n¡La compra fue hecha con éxito!" << endl;
+    set_num_compras(to_string(stoi(num_compras)+1));
   }
   else cout << "El producto está agotado" << endl;
 
