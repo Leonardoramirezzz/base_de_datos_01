@@ -11,7 +11,7 @@
 #include "array_objetos.h"
 using namespace std;
 
-void menu_cliente(Cliente persona);
+void menu_cliente(Cliente persona,int i);
 void menu_empleado(Empleado semiadmin);
 void menu_admin();
 
