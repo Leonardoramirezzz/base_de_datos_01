@@ -72,7 +72,7 @@ void Array_objetos::actualizar_cantidad_productos(string region, Producto* Lista
 Cliente* Array_objetos::array_registros_iniciales(){
     
   int num_clientes = num_registros_iniciales();
-  string usuario, contraseña, edad, region;
+  string usuario, contraseña, edad, region,num_compras;
   Lec_arrays.open("Datos_Usuarios.txt", ios::in);
   
   array_cliente = new Cliente[num_clientes];
@@ -82,7 +82,8 @@ Cliente* Array_objetos::array_registros_iniciales(){
       Lec_arrays >> contraseña;
       Lec_arrays >> edad;
       Lec_arrays >> region;
-      Cliente clienteNuevo(usuario, contraseña, edad, region);
+      Lec_arrays >> num_compras;
+      Cliente clienteNuevo(usuario, contraseña, edad, region, num_compras);
       array_cliente[i] = clienteNuevo;
   }
   Lec_arrays.close();
