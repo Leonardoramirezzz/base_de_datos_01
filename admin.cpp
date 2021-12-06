@@ -5,10 +5,11 @@
 
 ifstream Lec3;
 
-Administrador::Administrador (string _usuario, string _contraseña, string _edad, string _region, int _id) : Empleado(_usuario, _contraseña, _edad, _region, _id) {}
-
-void Administrador::ver_compras(){
-
+Administrador::Administrador (string _usuario, string _contraseña, string _edad, string _region, int _id,int _num_empleados) : Empleado(_usuario, _contraseña, _edad, _region, _id) {
+  num_empleados = _num_empleados;
+}
+void Administrador::Ver_cantidad_de_empleados(){
+  cout<< "actualmente posee "<< get_num_empleados() <<" empleados en su empresa"<<endl;
 }
 
 void Administrador::ver_datos(){
@@ -23,6 +24,6 @@ void Administrador::ver_datos(){
   Lec3.close(); 
 }
 
-void Administrador::ver_estadisticas(){
-  
+int Administrador::get_num_empleados(){
+  return num_empleados;
 }
