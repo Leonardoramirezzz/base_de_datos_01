@@ -1,3 +1,9 @@
+#pragma once
+#include "Usuarios.h"
+#include "producto.h"
+#include "empleado.h"
+using namespace std;
+
 class Cliente: public Usuario {
   private:
     string num_compras;
